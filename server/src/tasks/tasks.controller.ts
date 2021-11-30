@@ -17,8 +17,12 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Get()
-  getTasks() {
-    return this.tasksService.getTasks();
+  async getTasks() {
+    const data = await this.tasksService.getTasks();
+    return {
+      message: 'correct request',
+      data,
+    };
   }
 
   @Get(':id')
