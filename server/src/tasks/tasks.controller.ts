@@ -8,6 +8,7 @@ import {
   Body,
   ParseIntPipe,
 } from '@nestjs/common';
+import { Folder } from 'src/entities/folder.entity';
 import { CreateTaskDto } from './dtos/create-task.dto';
 import { EditTaskDto } from './dtos/edit-task.dto';
 import { TasksService } from './tasks.service';

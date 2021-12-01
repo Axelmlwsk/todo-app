@@ -5,7 +5,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TasksModule } from './tasks/tasks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Task } from './tasks/entities/task.entity';
+import { Task } from './entities/task.entity';
+import { Folder } from './entities/folder.entity';
+
+import { FoldersModule } from './folders/folders.module';
 
 const { PORT, PASSWORD, DATABASE } = process.env;
 
@@ -20,10 +23,11 @@ const { PORT, PASSWORD, DATABASE } = process.env;
       username: 'postgres',
       password: PASSWORD,
       database: DATABASE,
-      entities: [Task],
+      entities: [Task, Folder],
       synchronize: true,
     }),
     TasksModule,
+    FoldersModule,
   ],
 })
 export class AppModule {}

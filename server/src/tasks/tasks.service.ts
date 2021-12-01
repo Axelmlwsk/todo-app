@@ -1,15 +1,18 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Repository, getRepository } from 'typeorm';
 import { CreateTaskDto } from './dtos/create-task.dto';
 import { EditTaskDto } from './dtos/edit-task.dto';
-import { Task } from './entities/task.entity';
+import { Task } from 'src/entities/task.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Folder } from 'src/entities/folder.entity';
 
 @Injectable()
 export class TasksService {
   constructor(
     @InjectRepository(Task) private readonly taskRepository: Repository<Task>,
   ) {}
+
+  folderRepository = getRepository(Folder);
 
   async getTasks(): Promise<Task[]> {
     return await this.taskRepository.find();
@@ -30,6 +33,18 @@ export class TasksService {
   }
   async createTask(dto: CreateTaskDto) {
     const task = this.taskRepository.create(dto);
+    const folder = await this.folderRepository.findOne({
+      title: dto.folderName,
+    });
+    if (folder) {
+      task.folder = folder;
+    } else {
+      const folder = this.folderRepository.create({
+        title: dto.folderName,
+      });
+      await this.folderRepository.save(folder);
+      task.folder = folder;
+    }
     return await this.taskRepository.save(task);
   }
 }

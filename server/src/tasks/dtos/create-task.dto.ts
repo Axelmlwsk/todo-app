@@ -7,4 +7,6 @@ export class CreateTaskDto {
   description: string;
   @IsBoolean()
   done: boolean;
+  @IsString()
+  folderName: string;
 }

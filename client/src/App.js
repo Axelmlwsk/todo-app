@@ -1,7 +1,12 @@
-import "./App.css";
+import css from "./App.module.css";
+import Home from "./views/Home";
 
 function App() {
-  return <h1>hola</h1>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }
 
 export default App;
