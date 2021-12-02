@@ -1,12 +1,7 @@
-import css from "./App.module.css";
 import Home from "./views/Home";
 
 function App() {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;

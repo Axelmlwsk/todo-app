@@ -32,7 +32,9 @@ export class TasksService {
     return await this.taskRepository.delete(id);
   }
   async createTask(dto: CreateTaskDto) {
-    const task = this.taskRepository.create(dto);
+    const { title, description, done, folderName } = dto;
+
+    const task = this.taskRepository.create({ title, description, done });
     const folder = await this.folderRepository.findOne({
       title: dto.folderName,
     });
@@ -40,7 +42,7 @@ export class TasksService {
       task.folder = folder;
     } else {
       const folder = this.folderRepository.create({
-        title: dto.folderName,
+        title: folderName,
       });
       await this.folderRepository.save(folder);
       task.folder = folder;

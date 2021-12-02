@@ -1,0 +1,19 @@
+.container {
+  width: 100vw;
+  height: 8vh;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  color: var(--white);
+  font-size: 25px;
+}
+
+.right {
+  font-size: 25px;
+  color: var(--white);
+}

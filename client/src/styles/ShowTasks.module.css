@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--dark-grey);
+  margin-bottom: 20px;
+}
+
+.titleAndSelect {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleAndSelect h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.titleAndSelect > select {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.deleteButton {
+  background-color: var(--red);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: var(--dark-red);
+}

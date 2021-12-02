@@ -1,0 +1,29 @@
+.app {
+  width: 100vw;
+  min-height: 92vh;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-height: 92vh;
+  display: flex;
+  width: 100%;
+}
+
+.left,
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 976px) {
+  .container {
+    flex-direction: column;
+    height: max-content;
+  }
+}
