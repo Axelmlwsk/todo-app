@@ -29,3 +29,7 @@ CSS 3
 ## Responsive Feature
 
 ![Responsive](https://im7.ezgif.com/tmp/ezgif-7-c7d634015cba.gif)
+
+
+## Deploy
+[Link](https://axelmalawskitodoapp.netlify.app/)
