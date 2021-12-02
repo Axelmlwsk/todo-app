@@ -1,6 +1,6 @@
 # Todo App
 
-a simple all-in-one app where you can create tasks, group them into folders, edit them and delete entire folders with their respective tasks.
+A simple all-in-one app where you can create tasks, group them into folders, edit them and delete entire folders with their respective tasks.
 
 ## Technologies
 
