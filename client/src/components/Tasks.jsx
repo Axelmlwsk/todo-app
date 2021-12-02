@@ -8,7 +8,7 @@ function Tasks({ folder }) {
 
   useEffect(() => {
     (async function () {
-      const folders = await axios.get(`https://todo-app-axelmalawski.herokuapp.com/${folder}`);
+      const folders = await axios.get(`https://todo-app-axelmalawski.herokuapp.com/folders/${folder}`);
       setTasks(folders.data.tasks);
     })();
   }, [folder, tasks]);

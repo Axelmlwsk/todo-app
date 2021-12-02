@@ -21,7 +21,7 @@ function ShowTasks() {
     e.preventDefault();
     if (selectedFolder !== "Select a folder") {
       (async function () {
-        await axios.delete(`https://todo-app-axelmalawski.herokuapp.com/${selectedFolder}`);
+        await axios.delete(`https://todo-app-axelmalawski.herokuapp.com/folders/${selectedFolder}`);
       })();
     }
     setSelectedFolder("Select a folder");
