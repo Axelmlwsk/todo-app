@@ -11,14 +11,14 @@ function Task({ title, description, done, id }) {
   const handleDelete = (e) => {
     e.preventDefault();
     (async function () {
-      await axios.delete(`http://localhost:3001/tasks/${id}`);
+      await axios.delete(`https://todo-app-axelmalawski.herokuapp.com/${id}`);
     })();
   };
 
   const handleChangeCheckbox = (e) => {
     setChecked(!checked);
     (async function () {
-      await axios.put(`http://localhost:3001/tasks/${id}`, {
+      await axios.put(`https://todo-app-axelmalawski.herokuapp.com/${id}`, {
         done: !checked,
       });
     })();
@@ -35,7 +35,7 @@ function Task({ title, description, done, id }) {
     e.preventDefault();
     if (title !== "" || description !== "") {
       (async function () {
-        await axios.put(`http://localhost:3001/tasks/${id}`, {
+        await axios.put(`https://todo-app-axelmalawski.herokuapp.com/${id}`, {
           title,
           description,
         });

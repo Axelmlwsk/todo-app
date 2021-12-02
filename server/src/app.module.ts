@@ -11,7 +11,6 @@ import { Folder } from './entities/folder.entity';
 import { FoldersModule } from './folders/folders.module';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-const { PORT, PASSWORD, DATABASE, HOST, USER } = process.env;
 
 @Module({
   controllers: [AppController],
@@ -19,11 +18,13 @@ const { PORT, PASSWORD, DATABASE, HOST, USER } = process.env;
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: HOST,
-      port: parseInt(PORT),
-      username: USER,
-      password: PASSWORD,
-      database: DATABASE,
+      host: 'ec2-184-73-25-2.compute-1.amazonaws.com',
+      port: 5432,
+      username: 'igprdpdkqaxlcd',
+      password:
+        'c33265d8dade206160d83e5338b99a5e4827c6c50bb088d9e69e871ef907d4a1',
+
+      database: 'd22gfo68s8cio',
       entities: [Task, Folder],
       synchronize: true,
       ssl: true,

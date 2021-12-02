@@ -8,7 +8,7 @@ function ShowTasks() {
 
   useEffect(() => {
     (async function () {
-      const { data } = await axios.get("http://localhost:3001/folders");
+      const { data } = await axios.get("https://todo-app-axelmalawski.herokuapp.com/folders");
       setFolders(data.data);
     })();
   }, [selectedFolder, folders]);
@@ -21,7 +21,7 @@ function ShowTasks() {
     e.preventDefault();
     if (selectedFolder !== "Select a folder") {
       (async function () {
-        await axios.delete(`http://localhost:3001/folders/${selectedFolder}`);
+        await axios.delete(`https://todo-app-axelmalawski.herokuapp.com/${selectedFolder}`);
       })();
     }
     setSelectedFolder("Select a folder");

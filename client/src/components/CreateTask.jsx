@@ -13,7 +13,7 @@ function CreateTask() {
 
   useEffect(() => {
     (async function () {
-      const { data } = await axios.get("http://localhost:3001/folders");
+      const { data } = await axios.get("https://todo-app-axelmalawski.herokuapp.com/folders");
       setFolders(data.data);
     })();
   }, [folders]);
@@ -24,7 +24,7 @@ function CreateTask() {
     e.preventDefault();
 
     if (title && description && folderName !== "Select a folder") {
-      axios.post("http://localhost:3001/tasks", {
+      axios.post("https://todo-app-axelmalawski.herokuapp.com/tasks", {
         title,
         description,
         done: false,

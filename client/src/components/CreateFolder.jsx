@@ -8,7 +8,7 @@ function CreateFolder() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (folder && folder !== "Select a folder") {
-      axios.post("http://localhost:3001/folders", {
+      axios.post("https://todo-app-axelmalawski.herokuapp.com/folders", {
         title: folder,
       });
       setFolder("");
