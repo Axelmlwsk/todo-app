@@ -24,7 +24,6 @@ export class FoldersService {
     return await this.folderRepository.delete(id);
   }
   async createFolder(dto: CreateFolderDto) {
-    console.log(dto);
     const folder = this.folderRepository.create(dto);
     return await this.folderRepository.save(folder);
   }

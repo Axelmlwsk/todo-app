@@ -33,7 +33,6 @@ export class TasksService {
   }
   async createTask(dto: CreateTaskDto) {
     const { title, description, done, folderName } = dto;
-
     const task = this.taskRepository.create({ title, description, done });
     const folder = await this.folderRepository.findOne({
       title: dto.folderName,

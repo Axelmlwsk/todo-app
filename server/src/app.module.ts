@@ -10,7 +10,8 @@ import { Folder } from './entities/folder.entity';
 
 import { FoldersModule } from './folders/folders.module';
 
-const { PORT, PASSWORD, DATABASE } = process.env;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+const { PORT, PASSWORD, DATABASE, HOST, USER } = process.env;
 
 @Module({
   controllers: [AppController],
@@ -18,13 +19,14 @@ const { PORT, PASSWORD, DATABASE } = process.env;
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: HOST,
       port: parseInt(PORT),
-      username: 'postgres',
+      username: USER,
       password: PASSWORD,
       database: DATABASE,
       entities: [Task, Folder],
       synchronize: true,
+      ssl: true,
     }),
     TasksModule,
     FoldersModule,
