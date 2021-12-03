@@ -28,7 +28,7 @@ CSS 3
 
 ## Responsive Feature
 
-![Responsive](https://im7.ezgif.com/tmp/ezgif-7-c7d634015cba.gif)
+![Responsive](https://s10.gifyu.com/images/Untitled-video--Made-with-Clipchamp.gif)
 
 
 ## Deploy
